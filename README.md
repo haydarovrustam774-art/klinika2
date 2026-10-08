@@ -11,7 +11,7 @@ Zamonaviy ko'p tarmoqli klinika sayti: 3D hero, onlayn qabul, uch tilli (uz / ru
 Kerak: Node.js 18.18+ (tavsiya: 20, `.nvmrc` da)
 
 ```bash
-git clone https://github.com/SIZNING_NOMINGIZ/clinic-site.git
+git clone [https://github.com/SIZNING_NOMINGIZ/clinic-site.git](https://haydarovrustam774-art.github.io/klinika2/)
 cd clinic-site
 npm install
 cp .env.example .env.local     # Windows: copy .env.example .env.local
