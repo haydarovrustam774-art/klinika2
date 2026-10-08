@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DIZAYN TOKENLARI (HSL "H S% L%" formatida: shadcn/ui bilan mos)
+   Ranglarni faqat shu yerda o'zgartiring.
+   ============================================================ */
+@layer base {
+  :root {
+    --background: 210 40% 98%;          /* #F8FAFC */
+    --foreground: 222 47% 11%;          /* #0F172A */
+    --surface: 0 0% 100%;               /* glass karta asosi */
+    --card: 0 0% 100%;
+    --muted: 214 32% 94%;
+    --muted-foreground: 215 19% 35%;    /* #475569, AA */
+    --border: 214 32% 88%;
+
+    /* Matn/tugma uchun AA kontrastli to'q variantlar */
+    --primary: 201 96% 32%;             /* #0369A1 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 84% 26%;           /* #0F766E */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Faqat bezak: brend gradienti (#0EA5E9 -> #14B8A6) */
+    --brand-from: 199 89% 48%;
+    --brand-to: 173 80% 40%;
+
+    --accent: 158 64% 52%;              /* #34D399 — belgi/indikator uchun */
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 199 89% 48%;
+
+    --glass-bg: 255 255 255 / 0.65;
+    --glass-border: 255 255 255 / 0.7;
+    --glow: 0 20px 60px -20px hsl(199 89% 48% / 0.25);
+    --btn-gradient: linear-gradient(135deg, #0369a1 0%, #0f766e 100%);
+  }
+
+  .dark {
+    --background: 224 57% 6%;           /* #060B18 */
+    --foreground: 214 32% 91%;          /* #E2E8F0 */
+    --surface: 222 47% 11%;
+    --card: 222 47% 11%;
+    --muted: 223 40% 14%;
+    --muted-foreground: 215 20% 65%;    /* #94A3B8 */
+    --border: 217 33% 20%;
+
+    --primary: 199 93% 60%;             /* #38BDF8 */
+    --primary-foreground: 222 47% 11%;
+    --secondary: 172 66% 50%;           /* #2DD4BF */
+    --secondary-foreground: 222 47% 11%;
+
+    --brand-from: 199 93% 60%;
+    --brand-to: 172 66% 50%;
+    --accent: 158 64% 52%;
+    --ring: 199 93% 60%;
+
+    --glass-bg: 15 23 42 / 0.55;
+    --glass-border: 148 163 184 / 0.18;
+    --glow: 0 0 40px hsl(199 93% 60% / 0.4);
+    --btn-gradient: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+  }
+
+  * { @apply border-border; }
+
+  html { scroll-behavior: auto; -webkit-text-size-adjust: 100%; }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection { background: hsl(var(--brand-from) / 0.25); }
+}
+
+/* ============================================================
+   UMUMIY UTILITALAR
+   ============================================================ */
+@layer components {
+  /* Glassmorphism karta */
+  .glass {
+    background: rgb(var(--glass-bg));
+    border: 1px solid rgb(var(--glass-border));
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 20px 60px -20px hsl(var(--brand-from) / 0.22),
+                inset 0 1px 0 rgb(255 255 255 / 0.35);
+  }
+  .dark .glass { box-shadow: 0 0 0 1px hsl(var(--brand-from) / 0.08), 0 20px 60px -20px hsl(var(--brand-from) / 0.3); }
+
+  /* Bezak gradienti (matn rangi sifatida faqat KATTA sarlavhalarda) */
+  .text-brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--brand-from)), hsl(var(--brand-to)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--brand-from)), hsl(var(--brand-to)));
+  }
+
+  /* Tugma gradienti: oq matn bilan AA kontrast (5.5:1+) */
+  .btn-gradient {
+    background-image: var(--btn-gradient);
+    color: hsl(var(--primary-foreground));
+  }
+  .dark .btn-gradient { box-shadow: var(--glow); }
+
+  /* Fluid tipografiya */
+  .text-hero { font-size: clamp(2.5rem, 1.3rem + 5vw, 5rem); line-height: 1.04; font-weight: 800; }
+  .text-h2   { font-size: clamp(1.875rem, 1.3rem + 2.4vw, 3rem); line-height: 1.1; font-weight: 700; }
+  .text-lead { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); line-height: 1.6; }
+
+  /* Bo'lim oraliqlari */
+  .section-y { padding-block: clamp(4rem, 3rem + 5vw, 8rem); }
+}
+
+/* ============================================================
+   LENIS (silliq scroll) — rasmiy tavsiya etilgan qoidalar
+   ============================================================ */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Sichqonchasiz qurilmalarda custom cursor o'chiriladi */
+@media (hover: none), (pointer: coarse) { .custom-cursor { display: none !important; } }
+
+/* Harakat sezgirligi kam foydalanuvchilar uchun */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

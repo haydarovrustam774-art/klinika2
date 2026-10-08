@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "{name} — zamonaviy ko'p tarmoqli klinika",
+    "description": "{name}: terapiya, stomatologiya, kardiologiya, pediatriya, laboratoriya va diagnostika. Onlayn qabulga yoziling."
+  },
+  "common": {
+    "book": "Qabulga yozilish",
+    "skipToContent": "Asosiy kontentga o'tish",
+    "theme": { "toggle": "Mavzuni almashtirish", "light": "Yorug' rejim", "dark": "Tungi rejim" },
+    "language": "Til"
+  },
+  "nav": {
+    "services": "Xizmatlar",
+    "doctors": "Shifokorlar",
+    "prices": "Narxlar",
+    "blog": "Maqolalar",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa"
+  },
+  "foundation": {
+    "title": "Poydevor tayyor",
+    "text": "Mavzu, til, silliq scroll va qurilma darajasi aniqlash ishlayapti. Keyingi bosqich: layout va hero.",
+    "tier": "Qurilma darajasi"
+  }
+}

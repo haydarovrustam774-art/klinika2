@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "{name} — modern multi-specialty clinic",
+    "description": "{name}: therapy, dentistry, cardiology, pediatrics, laboratory and diagnostics. Book an appointment online."
+  },
+  "common": {
+    "book": "Book an appointment",
+    "skipToContent": "Skip to main content",
+    "theme": { "toggle": "Toggle theme", "light": "Light mode", "dark": "Dark mode" },
+    "language": "Language"
+  },
+  "nav": {
+    "services": "Services",
+    "doctors": "Doctors",
+    "prices": "Prices",
+    "blog": "Articles",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "foundation": {
+    "title": "Foundation is ready",
+    "text": "Theme, language, smooth scroll and device-tier detection are working. Next: layout and hero.",
+    "tier": "Device tier"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "[KLINIKA NOMI]",
+  "phone": "+998 90 123 45 67",
+  "phoneRaw": "+998901234567",
+  "email": "info@klinika.uz",
+  "telegram": "https://t.me/klinika_username",
+  "whatsapp": "https://wa.me/998901234567",
+  "instagram": "https://instagram.com/klinika",
+  "hours": {
+    "weekdays": "08:00 – 20:00",
+    "saturday": "09:00 – 18:00",
+    "sunday": "Dam olish"
+  },
+  "address": {
+    "uz": "Toshkent sh., Namuna ko'chasi, 1-uy",
+    "ru": "г. Ташкент, ул. Намуна, дом 1",
+    "en": "1 Namuna Street, Tashkent"
+  },
+  "geo": { "lat": 41.311081, "lng": 69.240562 },
+  "stats": { "years": 15, "doctors": 50 }
+}
